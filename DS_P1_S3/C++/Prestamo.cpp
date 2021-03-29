@@ -36,6 +36,6 @@ Prestamo::Prestamo(float imp, int cuotas, float interes){
     this->interes = interes;
 }
 
-Prestamo Prestamo::pedirPrestamo(float imp, int cuotas, float interes) {
-    return Prestamo(imp, cuotas, interes);;
+Prestamo Prestamo::pedirPrestamo(FormularioPrestamo *form) {
+    return Prestamo(form->getCuantia(), form->getCuotas(), form->getInteres());
 }

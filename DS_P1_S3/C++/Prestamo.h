@@ -1,6 +1,8 @@
 #ifndef PRESTAMO_H
 #define PRESTAMO_H
 
+#include "FormularioPrestamo.h"
+
 class Prestamo {
 
 private:
@@ -25,7 +27,7 @@ public:
 
     Prestamo(float imp, int cuotas, float interes);
 
-	Prestamo pedirPrestamo(float imp, int cuotas, float interes);
+	Prestamo pedirPrestamo(FormularioPrestamo *form);
 };
 
 #endif

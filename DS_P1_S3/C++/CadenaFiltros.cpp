@@ -13,7 +13,7 @@ FormularioPrestamo* CadenaFiltros::ejecutar(FormularioPrestamo* f) {
 }
 
 Prestamo CadenaFiltros::pedirPrestamo(FormularioPrestamo* f) {
-    setPrestamo(this->prestamo.pedirPrestamo(f->getCuantia(),f->getCuotas(),f->getInteres()));
+    setPrestamo(this->prestamo.pedirPrestamo(f));
     return this->prestamo;
 }
 
