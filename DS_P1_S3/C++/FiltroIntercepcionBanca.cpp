@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(){
-
+    cout<<"prueba";
     // El cliente quiere pedir un Préstamo de 15000 a 10 meses con un interés del 1,2
     Cliente* miCliente = new Cliente();
     Filtro *rentabilidad = new CompruebaRentabilidad();
