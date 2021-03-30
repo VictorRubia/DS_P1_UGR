@@ -24,6 +24,14 @@ void Prestamo::setInteres(float interes) {
 	this->interes = interes;
 }
 
+bool Prestamo::getDeudas() {
+    return this->deudas;
+}
+
+void Prestamo::setDeudas(bool deudas) {
+    this->interes = deudas;
+}
+
 Prestamo::Prestamo() {
 	importe = 0;
 	num_cuotas = 0;

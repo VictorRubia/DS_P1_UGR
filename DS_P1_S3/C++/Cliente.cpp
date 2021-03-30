@@ -7,8 +7,10 @@ Prestamo Cliente::pedirPrestamo(FormularioPrestamo* f) {
 }
 
 Cliente::Cliente() {
+    vector<int> deuda{100,100,100,100,100};
+
     gestorFiltros = new GestorFiltros();
-    this->miCuenta = new CuentaBancaria(1500, 2000, 1);
+    this->miCuenta = new CuentaBancaria(1500, 2000,1, deuda);
 }
 
 FormularioPrestamo* Cliente::rellenarFormulario(){

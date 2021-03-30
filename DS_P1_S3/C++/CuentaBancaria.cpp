@@ -1,9 +1,10 @@
 #include "CuentaBancaria.h"
 
-CuentaBancaria::CuentaBancaria(float balance, float nomina, int id) {
+CuentaBancaria::CuentaBancaria(float balance, float nomina, int id, vector<int> deudas) : deudas(deudas) {
     this->balance = balance;
     this->nomina = nomina;
     this->id = id;
+    this->deudas = deudas;
 }
 
 float CuentaBancaria::getBalance() {
@@ -28,4 +29,8 @@ int CuentaBancaria::getId() {
 
 void CuentaBancaria::setId(int id) {
 	this->id = id;
+}
+
+vector<int> CuentaBancaria::getDeudas() {
+    return this->deudas;
 }

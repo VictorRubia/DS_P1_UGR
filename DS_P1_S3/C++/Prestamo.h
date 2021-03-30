@@ -9,6 +9,7 @@ private:
 	float importe;
 	int num_cuotas;
 	float interes;
+	bool deudas=false;
 
 public:
 	float getImporte();
@@ -22,6 +23,10 @@ public:
 	float getInteres();
 
 	void setInteres(float interes);
+
+	bool getDeudas();
+
+    void setDeudas(bool deudas);
 
 	Prestamo();
 

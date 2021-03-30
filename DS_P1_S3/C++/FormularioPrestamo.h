@@ -10,6 +10,7 @@ private:
 	float cuantia;
 	int cuotas;
 	float interes;
+	bool deudas=false;
 	CuentaBancaria *cuenta;
 
 public:
@@ -26,6 +27,10 @@ public:
 	float getInteres();
 
 	void setInteres(float interes);
+
+    bool getDeudas();
+
+    void setDeudas(bool deudas);
 
     CuentaBancaria* getCuenta();
 

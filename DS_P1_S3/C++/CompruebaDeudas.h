@@ -12,7 +12,7 @@ class CompruebaDeudas : public Filtro {
 private:
     FormularioPrestamo* ejecutar(FormularioPrestamo* f);
 
-	bool comprueba_deudas();
+	bool comprueba_deudas(FormularioPrestamo* f);
 };
 
 #endif
