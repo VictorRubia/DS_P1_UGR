@@ -5,7 +5,6 @@
 
 ## Práctica 1
 
-#
 > Sesión 1
 
 - Patrón Observador en Java con interfaz mediante Java Swing.
