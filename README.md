@@ -23,4 +23,4 @@
 
 ## Licencia
 
-[![CC0](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![CC0](http://creativecommons.org/licenses/by-nc-nd/4.0/)
