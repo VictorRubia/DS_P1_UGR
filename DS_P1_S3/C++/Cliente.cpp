@@ -29,10 +29,6 @@ FormularioPrestamo* Cliente::rellenarFormulario(){
     return this->formulario;
 }
 
-FormularioPrestamo *Cliente::getFormulario() {
-    return formulario;
-}
-
 GestorFiltros *Cliente::getGestorFiltros() {
     return gestorFiltros;
 }

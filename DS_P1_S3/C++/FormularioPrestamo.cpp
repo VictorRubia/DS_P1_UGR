@@ -32,10 +32,6 @@ CuentaBancaria* FormularioPrestamo::getCuenta() {
     return cuenta;
 }
 
-void FormularioPrestamo::setCuenta(CuentaBancaria *cuenta) {
-    FormularioPrestamo::cuenta = cuenta;
-}
-
 FormularioPrestamo::FormularioPrestamo(float cuantia, int cuotas, float interes, CuentaBancaria* cuenta, float deuda) {
     this->cuantia = cuantia;
     this->cuotas = cuotas;

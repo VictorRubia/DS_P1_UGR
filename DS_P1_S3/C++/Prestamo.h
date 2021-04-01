@@ -9,28 +9,17 @@ private:
 	float importe;
 	int num_cuotas;
 	float interes;
-	bool deudas=false;
 
 public:
-	float getImporte();
+    Prestamo(float imp, int cuotas, float interes);
 
-	void setImporte(float importe);
+    Prestamo();
+
+	float getImporte();
 
 	int getNum_cuotas();
 
-	void setNum_cuotas(int num_cuotas);
-
 	float getInteres();
-
-	void setInteres(float interes);
-
-	bool getDeudas();
-
-    void setDeudas(bool deudas);
-
-	Prestamo();
-
-    Prestamo(float imp, int cuotas, float interes);
 
 	Prestamo pedirPrestamo(FormularioPrestamo *form);
 };

@@ -31,8 +31,6 @@ public:
     float getDeudas();
 
     CuentaBancaria* getCuenta();
-
-    void setCuenta(CuentaBancaria *cuenta);
 };
 
 #endif

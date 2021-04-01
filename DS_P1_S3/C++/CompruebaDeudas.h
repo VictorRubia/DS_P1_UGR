@@ -9,9 +9,10 @@ using namespace std;
 class CompruebaDeudas : public Filtro {
 
 
-private:
+public:
     FormularioPrestamo* ejecutar(FormularioPrestamo* f) override;
 
+private:
 	bool comprueba_deudas(FormularioPrestamo* f);
 };
 

@@ -17,9 +17,11 @@ using namespace std;
 class CompruebaRentabilidad : public Filtro {
 
 private:
+	bool comprueba_rentabilidad(FormularioPrestamo* f);
+
+public:
     FormularioPrestamo* ejecutar(FormularioPrestamo* f) override;
 
-	bool comprueba_rentabilidad(FormularioPrestamo* f);
 };
 
 #endif

@@ -24,8 +24,6 @@ public:
 
     FormularioPrestamo* rellenarFormulario();
 
-    FormularioPrestamo* getFormulario();
-
     GestorFiltros* getGestorFiltros();
 
     Prestamo getMiPrestamo();
