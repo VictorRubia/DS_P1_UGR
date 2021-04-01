@@ -10,11 +10,11 @@ private:
 	float cuantia;
 	int cuotas;
 	float interes;
-	bool deudas=false;
 	CuentaBancaria *cuenta;
+	float deuda;
 
 public:
-    FormularioPrestamo(float cuantia, int cuotas, float interes, CuentaBancaria* cuenta);
+    FormularioPrestamo(float cuantia, int cuotas, float interes, CuentaBancaria* cuenta, float deuda);
 
     float getCuantia();
 
@@ -28,9 +28,7 @@ public:
 
 	void setInteres(float interes);
 
-    bool getDeudas();
-
-    void setDeudas(bool deudas);
+    float getDeudas();
 
     CuentaBancaria* getCuenta();
 

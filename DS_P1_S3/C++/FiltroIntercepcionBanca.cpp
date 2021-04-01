@@ -19,16 +19,12 @@ int main(){
     miCliente->getGestorFiltros()->setFiltros(deudas);
     miCliente->getGestorFiltros()->setFiltros(rentabilidad);
 
-
-
     while (true){
         miCliente->pedirPrestamo(miCliente->rellenarFormulario());
-        if((miCliente->getFormulario()->getDeudas()==false)&&(miCliente->getMiPrestamo().getInteres() != NULL)) {
 
-            cout << "Finalmente el préstamo es de " << miCliente->getMiPrestamo().getImporte() << " € a pagar en " << miCliente->getMiPrestamo().getNum_cuotas() << " meses. Interés del " << miCliente->getMiPrestamo().getInteres() << endl;
+        cout << "\nFinalmente el préstamo es de " << miCliente->getMiPrestamo().getImporte() << " € a pagar en " << miCliente->getMiPrestamo().getNum_cuotas() << " meses. Interés del " << miCliente->getMiPrestamo().getInteres() << endl << endl;
 
         this_thread::sleep_for (std::chrono::seconds(3));
-        }
     }
 
     return 0;

@@ -15,6 +15,7 @@ private:
     FormularioPrestamo* formulario;
     CuentaBancaria* miCuenta;
     Prestamo miPrestamo;
+    float deuda;
 
 public:
 	Prestamo pedirPrestamo(FormularioPrestamo* f);
@@ -28,6 +29,7 @@ public:
     GestorFiltros* getGestorFiltros();
 
     Prestamo getMiPrestamo();
+
 };
 
 #endif

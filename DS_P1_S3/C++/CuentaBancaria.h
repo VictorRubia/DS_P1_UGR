@@ -11,10 +11,9 @@ private:
 	float balance;
 	float nomina;
 	int id;
-	vector<int> deudas;
 
 public:
-    CuentaBancaria(float balance, float nomina, int id, vector<int> deudas);
+    CuentaBancaria(float balance, float nomina, int id);
 
 	float getBalance();
 

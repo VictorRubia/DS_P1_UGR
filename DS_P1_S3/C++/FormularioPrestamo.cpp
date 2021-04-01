@@ -24,12 +24,8 @@ void FormularioPrestamo::setInteres(float interes) {
 	this->interes = interes;
 }
 
-bool FormularioPrestamo::getDeudas() {
-    return this->deudas;
-}
-
-void FormularioPrestamo::setDeudas(bool deudas) {
-    this->deudas = deudas;
+float FormularioPrestamo::getDeudas() {
+    return this->deuda;
 }
 
 CuentaBancaria* FormularioPrestamo::getCuenta() {
@@ -40,9 +36,10 @@ void FormularioPrestamo::setCuenta(CuentaBancaria *cuenta) {
     FormularioPrestamo::cuenta = cuenta;
 }
 
-FormularioPrestamo::FormularioPrestamo(float cuantia, int cuotas, float interes, CuentaBancaria* cuenta) {
+FormularioPrestamo::FormularioPrestamo(float cuantia, int cuotas, float interes, CuentaBancaria* cuenta, float deuda) {
     this->cuantia = cuantia;
     this->cuotas = cuotas;
     this->interes = interes;
     this->cuenta = cuenta;
+    this->deuda = deuda;
 }

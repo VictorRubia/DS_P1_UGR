@@ -1,31 +1,34 @@
 #include "CompruebaDeudas.h"
 
 FormularioPrestamo* CompruebaDeudas::ejecutar(FormularioPrestamo* f) {
-    cout << "Comprobando si tiene deudas pendientes..." << endl;
+    if (f->getInteres() != 0) {
+        cout << "Comprobando si tiene deudas pendientes...\n-----------------------" << endl;
 
-    if (comprueba_deudas(f)==false) {
-        cout <<  " son bajas por tanto puede recibir el prestamo \n"<< endl;
-        f->setDeudas(false);
-    }else{
-        f->setDeudas(true);
-        cout <<  " son altas por tanto no puede recibir el prestamo \n"<< endl;
+        if (comprueba_deudas(f) == true) {
+            f->setInteres(0);
+            f->setCuantia(0);
+            f->setCuotas(0);
+        }
     }
-    f->getCuenta()->getDeudas().clear();
+
     return f;
 
 }
 bool CompruebaDeudas::comprueba_deudas(FormularioPrestamo* f) {
-    bool  tiene_deuda= true;
-    int total_deudas =0;
-    for (int i=0; i<5; i++){
-      total_deudas +=  f->getCuenta()->getDeudas().at(i) +  rand()%10000;
-      cout << total_deudas<<"\n";
-    }
+    bool tiene_deuda;
 
-    if (f->getCuantia()>total_deudas){
+    if ( f->getDeudas() < f->getCuantia()*0.3){
+        if(f->getDeudas() == 0)
+            cout << "Usted no tiene deudas, por lo que puede recibir el prestamo" << endl;
+        else
+            cout << "Aunque usted tiene deudas con nosotros (" << f->getDeudas() << " €)" <<" puede recibir el prestamo" << endl;
         tiene_deuda=false;
     }
-    cout<<"Sus deudas son de " << total_deudas;
+    else{
+        tiene_deuda = true;
+        cout << "Como usted tiene deudas elevadas con nosotros (" << f->getDeudas() << " €)" <<" no puede recibir el prestamo" << endl;
+    }
+
     return tiene_deuda;
 }
 

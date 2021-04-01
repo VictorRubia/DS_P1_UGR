@@ -1,28 +1,27 @@
 #include "CompruebaRentabilidad.h"
 
 FormularioPrestamo* CompruebaRentabilidad::ejecutar(FormularioPrestamo* f) {
-    bool rentable = false;
-    string opcion;
+    if (f->getInteres() != 0){
+        string opcion;
 
-    cout << "Comprobando la rentabilidad del cliente ..." << endl << endl;
-    if (comprueba_rentabilidad(f) == false){
-        cout << "En base a su solicitud el banco le ofrece los siguientes términos." << endl;
-        //cin >> opcion;
+        cout << "-----------------------\nComprobando la rentabilidad del cliente ...\n-----------------------" << endl << endl;
+        if (comprueba_rentabilidad(f) == false) {
+            cout << "En base a su solicitud el banco le ofrece los anteriores términos." << endl;
+            //cin >> opcion;
 
-        //  Toma de decisiones aleatoria
-        vector<string> opciones = {"si", "no"};
-        srand (time(NULL));
-        string opcion =  opciones[(rand() % opciones.size())];
+            //  Toma de decisiones aleatoria
+            vector<string> opciones = {"si", "no"};
+            srand(time(NULL));
+            string opcion = opciones[(rand() % opciones.size())];
 
-        if(opcion == "si"){
-            cout << "Usted acepta las condiciones, asignando prestamo..." << endl;
-        }
-        else{
-            cout << "Como usted no aceptó las condiciones estamos cancelando su solicitud..." << endl;
-            f->setInteres(NULL);
-            f->setCuantia(NULL);
-            f->setCuotas(NULL);
-            f->setCuenta(NULL);
+            if (opcion == "si") {
+                cout << "Usted acepta las condiciones, asignando prestamo..." << endl;
+            } else {
+                cout << "Como usted no aceptó las condiciones estamos cancelando su solicitud..." << endl;
+                f->setInteres(0);
+                f->setCuantia(0);
+                f->setCuotas(0);
+            }
         }
     }
     return f;
