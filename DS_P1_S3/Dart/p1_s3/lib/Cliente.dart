@@ -9,6 +9,7 @@ class Cliente{
   FormularioPrestamo formulario;
   CuentaBancaria miCuenta;
   Prestamo miPrestamo;
+  dynamic deuda;
 
   Cliente(){
     gestorFiltros = new GestorFiltros();
@@ -27,9 +28,14 @@ class Cliente{
     int cuotas = 3 + source.nextInt(30 - 3);
     source = new Random(now.millisecondsSinceEpoch);
     double interes = source.nextDouble() * (2.5 - 1.1) + 1.1;
+    deuda = source.nextInt(2);
 
-    formulario = new FormularioPrestamo(cuantia, cuotas, interes, miCuenta);
-    print('--- Formulario de PRESTAMO --- \nCuantia: ${cuantia.toStringAsFixed(2)} € \nCuotas (meses): ${cuotas}\nInteres: ${interes.toStringAsFixed(2)}\nNómina: ${miCuenta.nomina} €\n-----------------------');
+    if(deuda!=0){
+      deuda = (500 +source.nextDouble() * (15000-500));
+    }
+
+    formulario = new FormularioPrestamo(cuantia, cuotas, interes, miCuenta, deuda);
+    print('--- Formulario de PRESTAMO --- \nCuantia: ${cuantia.toStringAsFixed(2)} € \nCuotas (meses): ${cuotas}\nInteres: ${interes.toStringAsFixed(2)}\nNómina: ${miCuenta.nomina} €\nDeuda del Cliente: ${deuda.toStringAsFixed(2)} €\n-----------------------');
 
     return formulario;
   }

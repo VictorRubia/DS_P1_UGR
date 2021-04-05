@@ -35,7 +35,7 @@ module Banca
            end
 
            def initialize; end
-         end
+  end
 
   cliente = Cliente.new()
   cliente.crear_banco()

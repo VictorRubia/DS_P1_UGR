@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'prestamo.dart';
+import 'CompruebaDeudas.dart';
 import 'Cliente.dart';
 import 'CompruebaRentabilidad.dart';
 import 'Filtro.dart';
@@ -8,8 +8,11 @@ import 'Filtro.dart';
 void main(){
   Cliente miCliente = new Cliente();
   Filtro rentabilidad = new CompruebaRentabilidad();
+  Filtro deudas = new CompruebaDeudas();
 
   miCliente.gestorFiltros.setFiltros(rentabilidad);
+  miCliente.gestorFiltros.setFiltros(deudas);
+
   while(true) {
     miCliente.pedirPrestamo(miCliente.rellenarFormulario());
     if(miCliente.miPrestamo.interes != null)

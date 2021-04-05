@@ -6,28 +6,32 @@ import 'dart:io';
 
 class CompruebaRentabilidad implements Filtro{
   FormularioPrestamo ejecutar(FormularioPrestamo f){
-    bool rentable = false;
-    String opcion;
+    if(f.interes != 0) {
+      bool rentable = false;
+      String opcion;
 
-    print('Comprobando la rentabilidad del cliente ...\n');
-    if (comprueba_rentabilidad(f) == false){
-      print('En base a su solicitud el banco le ofrece los siguientes términos.');
-    //  var opcion = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));   // Para leer de entrada
+      print('Comprobando la rentabilidad del cliente ...\n');
+      if (comprueba_rentabilidad(f) == false) {
+        print(
+            'En base a su solicitud el banco le ofrece los siguientes términos.');
+        //  var opcion = stdin.readLineSync(encoding: Encoding.getByName('utf-8'));   // Para leer de entrada
 
-      //  Toma de decisión aleatoria
-      List<String> opciones = ['si', 'no'];
-      Random random = new Random();
-      var opcion = opciones[random.nextInt(opciones.length)];
+        //  Toma de decisión aleatoria
+        List<String> opciones = ['si', 'no'];
+        Random random = new Random();
+        var opcion = opciones[random.nextInt(opciones.length)];
 
-      if(opcion == 'S' || opcion == 's' || opcion == 'si'){
-        print('Usted acepta las condiciones, asignando prestamo...');
-      }
-      else{
-        print('Como usted no aceptó las condiciones estamos cancelando su solicitud...');
-        f.interes = null;
-        f.cuantia = null;
-        f.cuotas = null;
-        f.cuenta = null;
+        if (opcion == 'S' || opcion == 's' || opcion == 'si') {
+          print('Usted acepta las condiciones, asignando prestamo...');
+        }
+        else {
+          print(
+              'Como usted no aceptó las condiciones estamos cancelando su solicitud...');
+          f.interes = 0;
+          f.cuantia = 0;
+          f.cuotas = 0;
+          f.cuenta = null;
+        }
       }
     }
     return f;

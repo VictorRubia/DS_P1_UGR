@@ -24,7 +24,7 @@ FormularioPrestamo* Cliente::rellenarFormulario(){
 
     this->formulario = new FormularioPrestamo(cuantia,cuotas,interes,this->miCuenta,deuda);
 
-    cout << "--- Formulario de PRESTAMO --- \nCuantia: " << cuantia << " €\nCuotas (meses): " << cuotas << "\nInteres: " << interes << "\nNomina: " << miCuenta->getNomina() << " €\nDeudas del Cliente: " << this->deuda << "€\n-----------------------" << endl;
+    cout << "--- Formulario de PRESTAMO --- \nCuantia: " << cuantia << " €\nCuotas (meses): " << cuotas << "\nInteres: " << interes << "\nNomina: " << miCuenta->getNomina() << " €\nDeudas del Cliente: " << this->deuda << " €\n-----------------------" << endl;
 
     return this->formulario;
 }
